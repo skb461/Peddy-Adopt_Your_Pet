@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Peddy - Pet Adoption</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css">
+             
+</head>
+
+<body class="bg-white">
+    <header>
+        <nav class="bg-gray-100 shadow">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="dropdown lg:hidden mr-4">
+                        <button tabindex="0" class="btn btn-ghost" aria-label="Open menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </button>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 shadow-lg text-black">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Animals</a></li>
+                            <li><a href="#">Foundation</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-ghost text-black text-xl font-bold"><img src="images/logo.webp" alt=""> Peddy</a>
+                </div>
+                <div class="hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-black">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Animals</a></li>
+                        <li><a href="#">Foundation</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center">
+                    <ion-icon name="person-outline" class="text-2xl text-black"></ion-icon>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero min-h-screen bg-cover bg-center bg-white">
+        <div class="hero-content text-center text-black">
+            <div class="max-w-2xl">
+                <h2 class="text-xl mb-2">Bringing Families Together ❤️‍🔥</h2>
+                <h1 class="text-5xl font-bold mb-4">Your Path to Adoption Starts Here</h1>
+                <p class="mb-6">
+                    It is a long established fact that a reader will be distracted by the readable content of a
+                    page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters.
+                </p>
+                <button class="btn btn-accent mb-6">View More</button>
+                <img src="images/pet.webp" alt="Adorable Pet" class="mx-auto mb-6">
+                <h2 class="text-4xl font-semibold">Adopt Your Best Friend</h2>
+                <p class="mt-4">
+                    Adopting a pet is a rewarding experience that brings joy and companionship. Start your journey
+                    today and make a difference in a pet's life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="category-buttons-placeholder" class="flex justify-center mb-4"></div>
+
+    <div id="spinner-container" class="spinner-container">
+        <div class="spinner-border border-t-4 border-blue-500 rounded-full animate-spin" role="status"></div>
+    </div>
+
+    <div class="flex justify-end w-11/12 mx-auto mb-4">
+        <button id="sort-btn" class="btn btn-accent">Sort by Price (Descending)</button>
+    </div>
+
+    <div class="flex flex-row w-full">
+        <div id="pet-container" class="w-8/12 border rounded-lg px-3 py-3 mx-0 ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center"></div>
+
+        <div class="w-3/12 border rounded-lg px-3 py-3 mx-auto h-96 overflow-y-auto bg-gray-50 liked-pet grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center"></div>
+    </div>
+
+    <div id="pet-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg text-center relative">
+            <button id="close-modal-x" class="absolute top-2 right-2 text-gray-700 font-bold">&times;</button>
+            <img src="images/handship_icon.png" class="w-56 mx-auto" alt="">
+            <h3 class="text-xl font-bold mb-4">
+                Congrates
+            </h3>
+            <p>
+                adoption Process is start for your Pet
+            </p>
+
+            <p id="countdown" class="text-lg text-gray-700">3 seconds</p>
+            <p id="message" class="text-lg text-green-500 mt-4 hidden">Congratulations! You have adopted a pet.</p>
+            <button id="close-modal" class="bg-blue-500 text-white mt-4 py-2 px-4 rounded hidden">Close</button>
+        </div>
+    </div>
+
+    <div id="pet-details-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg text-center relative max-w-md w-full">
+            <button id="close-modal-x-details" class="absolute top-2 right-2 text-gray-700 font-bold text-3xl">&times;</button>
+            <div id="pet-details-content"></div>
+        </div>
+    </div>
+
+    <footer class="footer bg-black text-white text-base-content p-10 px-40">
+        <nav>
+            <div class="flex mb-5 ">
+                <div>
+                    <img src="images/logo.webp" alt="">
+                </div>
+                <div class="ml-5 font-bold text-xl">
+                    <h2>
+                        Peddy
+                    </h2>
+                </div>
+            </div>
+            
+            <a class="link link-hover">
+                Location: av. Washington 165, NY CA 54003
+            </a>
+            <a class="link link-hover">
+                Phone: +31 85 964 47 25
+            </a>
+            <a class="link link-hover">
+                Email: info@yourdomain.com
+            </a>
+            <a class="link link-hover">
+                Openings hours: 9.00 AM - 5.00 PM
+            </a>
+            <div class="flex gap-4 mt-4 w-5">
+                <img src="images/fb.png" alt="">
+                <img src="images/x.png" alt="">
+                <img src="images/yt.png" alt="">
+                <img src="images/instagram.png" alt="">
+            </div>
+        </nav>
+        
+        <nav>
+            <div  class="text-white font-bold text-xl mb-5">
+                <h2>
+                Useful Links
+                </h2>
+            </div>
+            
+            <a class="link link-hover">Home</a>
+            <a class="link link-hover">About Us</a>
+            <a class="link link-hover">Animals</a>
+            <a class="link link-hover">Foundation</a>
+            <a class="link link-hover">Contact</a>
+        </nav>
+        <form>
+            <div  class="text-white font-bold text-xl mb-5">
+                <h2>
+                Useful Links
+                </h2>
+            </div>
+            <fieldset class="form-control w-80">
+                <div class="join">
+                <input
+                    type="text"
+                    placeholder="Enter your email"
+                    class="input  join-item" />
+                </div>
+                <div>
+                <button class="btn btn-accent text-white w-56 mt-5">Subscribe</button>
+                </div>
+                
+            </fieldset>
+        </form>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
