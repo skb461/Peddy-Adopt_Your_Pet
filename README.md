@@ -35,7 +35,7 @@ The project leverages modern JavaScript ES6+ features to ensure clean, efficient
 
 ## 🚀 **Live Demo**
 Check out the live version of **Peddy** in action and start your pet adoption journey today!  
-[**Live Demo Link**](https://your-live-link.com)
+[**Live Demo Link**](jazzy-lily-ef6038.netlify.app)
 
 ---
 
