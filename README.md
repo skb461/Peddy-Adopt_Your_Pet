@@ -9,6 +9,8 @@ Welcome to **Peddy**, the ultimate platform to bring pets and families together!
 
 > 🏡 _"Because every pet deserves a loving home."_
 
+![Peddy - Pet Adoption](images/FeatureImage.png)
+
 ---
 
 ## ✨ **Key Features**
@@ -55,4 +57,4 @@ Here's a quick breakdown of the core files in the project:
 
 ---
 
-> _Peddy - Bringing families and pets together, one adoption at a time._ 🐶🐱
+> _Peddy - Your Path to Adoption Starts Here._ 🐶🐱
