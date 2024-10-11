@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createCategoryButtons(categories) {
         const categoryContainer = document.createElement('div');
-        categoryContainer.className = "flex justify-center my-4";
+        categoryContainer.className = "grid grid-cols-1 lg:flex justify-center my-4";
 
         categories.forEach(category => {
             const button = document.createElement('button');
-            button.className = "bg-transparent border border-gray-500 text-gray-700 py-10 px-20 text-2xl rounded-full mx-2 rounded hover:bg-gray-200 category-btn";
+            button.className = "bg-transparent border border-gray-500 text-gray-700 py-10 px-20 text-2xl rounded-full mx-2 rounded hover:bg-gray-200 category-btn my-2";
             button.setAttribute('data-category', category.category.toLowerCase());
             button.innerHTML = `
                 <img src="${category.category_icon}" alt="${category.category} icon" class="inline-block w-10 h-10 mr-2">
