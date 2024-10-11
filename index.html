@@ -78,14 +78,14 @@
         <div class="spinner-border border-t-4 border-blue-500 rounded-full animate-spin" role="status"></div>
     </div>
 
-    <div class="flex justify-end w-11/12 mx-auto mb-4">
+    <div class="flex justify-center lg:justify-end w-11/12 mx-auto mb-4">
         <button id="sort-btn" class="btn btn-accent">Sort by Price (Descending)</button>
     </div>
 
-    <div class="flex flex-row w-full">
-        <div id="pet-container" class="w-8/12 border rounded-lg px-3 py-3 mx-0 ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center"></div>
+    <div class="grid grid-cols-1 lg:flex lg:flex-row w-full">
+        <div id="pet-container" class="w-full lg:w-8/12 border rounded-lg px-3 py-3 mx-0 lg:ml-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center"></div>
 
-        <div class="w-3/12 border rounded-lg px-3 py-3 mx-auto h-96 overflow-y-auto bg-gray-50 liked-pet grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center"></div>
+        <div class="w-full lg:w-3/12 border rounded-lg px-3 py-3 mx-auto h-96 overflow-y-auto bg-gray-50 liked-pet grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center"></div>
     </div>
 
     <div id="pet-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
@@ -106,13 +106,13 @@
     </div>
 
     <div id="pet-details-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
-        <div class="bg-white p-6 rounded-lg text-center relative max-w-md w-full">
-            <button id="close-modal-x-details" class="absolute top-2 right-2 text-gray-700 font-bold text-3xl">&times;</button>
+        <div class="bg-white rounded-lg text-center relative max-w-md w-full overflow-auto">
             <div id="pet-details-content"></div>
+            <button id="close-modal-x-details" class="text-gray-700 font-bold text-xl btn btn-accent w-full text-center">Close</button>
         </div>
     </div>
 
-    <footer class="footer bg-black text-white text-base-content p-10 px-40">
+    <footer class="footer bg-black text-white text-base-content p-10 px-lg-40">
         <nav>
             <div class="flex mb-5 ">
                 <div>
