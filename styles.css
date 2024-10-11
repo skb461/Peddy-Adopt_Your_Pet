@@ -140,3 +140,8 @@ button[disabled] {
         width: 95%;
     }
 }
+
+
+#pet-details-modal .bg-white {
+    padding-top: 0px;
+}
